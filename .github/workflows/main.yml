@@ -15,7 +15,8 @@ on:
                         type: string
                         description: from where to copy
 
-
+env:
+    workspace_git: ${{ github.workspace }}
 
 jobs:   
     copy: 
@@ -24,9 +25,17 @@ jobs:
             - name: make directory and files
               run: |
                     pwd
-                    mkdir source
-                    mkdir target
-                    echo "hello" > source/hi.txt
+                    mkdir ${{ env.workspace_git }}/source
+                    mkdir ${{ env.workspace_git }}/target
+                    echo "hello" > ${{ env.workspace_git }}/source/hi.txt
+                    echo "hello" > ${{ env.workspace_git }}/source/hi1.txt
+                    echo "hello" > ${{ env.workspace_git }}/source/hi2.txt
+                    echo "hello" > ${{ env.workspace_git }}/source/hi3.txt
+                    echo "hello" > ${{ env.workspace_git }}/source/hi4.txt
+                    echo "hello" > ${{ env.workspace_git }}/source/hi5.txt
+                 
             - name: copy
-              run: bash script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
+              run: bash ../script.sh ${{ env.workspace_git }}/source/${{github.event.inputs.filename}} ${{env.GH_WS}}
+              env:
+                GH_WS: ${{ env.workspace_git }}
               shell: bash
