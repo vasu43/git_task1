@@ -35,7 +35,7 @@ jobs:
                     echo "hello" > ${{ env.workspace_git }}/source/hi5.txt
                  
             - name: copy
-              run: bash ../script.sh ${{ env.workspace_git }}/source/${{github.event.inputs.filename}} ${{env.GH_WS}}
+              run: bash /home/runner/work/git_task1/git_task1/.github/script.sh ${{ env.workspace_git }}/source/${{github.event.inputs.filename}} ${{env.GH_WS}}
               env:
                 GH_WS: ${{ env.workspace_git }}
               shell: bash
