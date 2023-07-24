@@ -25,6 +25,7 @@ jobs:
             - name: show variables
               run: |
                 echo ${{ env.workspace_git }}
+                ls
               shell: bash
     copy: 
         runs-on: ubuntu-latest
@@ -40,6 +41,7 @@ jobs:
                     echo "hello" > ${{ env.workspace_git }}/source/hi3.txt
                     echo "hello" > ${{ env.workspace_git }}/source/hi4.txt
                     echo "hello" > ${{ env.workspace_git }}/source/hi5.txt
+              shell: bash
                  
             - name: copy
               run: bash ${{ env.workspace_git }}/script.sh ${{ env.workspace_git }}/source/${{github.event.inputs.filename}} ${{env.GH_WS}}
