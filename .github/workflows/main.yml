@@ -23,6 +23,7 @@ jobs:
         steps:
             - name: make directory and files
               run: |
+                    pwd
                     mkdir source
                     mkdir target
                     echo "hello" > source/hi.txt
