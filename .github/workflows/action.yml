@@ -18,6 +18,7 @@ on:
                       
 jobs:
   copying_file:
+    runs-on: ubuntu-latest
     steps:
       - name: making_directory
         run: |
