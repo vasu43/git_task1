@@ -25,7 +25,7 @@ jobs:
             - name: show variables
               run: |
                 echo ${{ env.workspace_git }}
-                ls ${{ env.workspace_git }}
+                ls ${{ env.workspace_git }}/
               shell: bash
     copy: 
         runs-on: ubuntu-latest
