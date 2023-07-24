@@ -24,8 +24,8 @@ jobs:
         steps:
             - name: show variables
               run: |
-                echo "hello"
-                cat ${{ env.workspace_git }}/script.sh
+                echo "hello"    
+                cat ${{ env.workspace_git }}/README.md
                 echo ${{ env.workspace_git }}
                 
               shell: bash
