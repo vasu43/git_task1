@@ -1,1 +1,25 @@
+name: Copy Local File
 
+on: 
+    workflow_dispatch: 
+        inputs:
+            
+                filename:
+
+                        required: true
+                        type: string
+                        description: what to copy
+                path: 
+
+                        required: true
+                        type: string
+                        description: from where to copy
+
+
+
+jobs: 
+    copy: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: copy
+              run: bash script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
