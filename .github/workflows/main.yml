@@ -46,7 +46,12 @@ jobs:
               shell: bash
                  
             - name: copy
-              run: bash ${{ env.workspace_git }}/script.sh ${{ env.workspace_git }}/source/${{github.event.inputs.filename}} ${{env.GH_WS}}
+              run: |
+                    if [-f "$1"];then
+                        cp ${{ env.workspace_git }}/script.sh ${{ env.workspace_git }}/source/${{github.event.inputs.filename}} ${{env.GH_WS}}/target/
+                    else
+                        echo "file dosen't exit"
+                    fi
               env:
                 GH_WS: ${{ env.workspace_git }}
               shell: bash
