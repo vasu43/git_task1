@@ -27,5 +27,5 @@ jobs:
                     mkdir target
                     echo "hello" > source/hi.txt
             - name: copy
-              run: bash /../../script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
+              run: bash script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
               shell: bash
