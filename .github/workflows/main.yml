@@ -22,4 +22,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: copy
-              run: bash script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
+              run: ./script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
