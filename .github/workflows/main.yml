@@ -23,9 +23,9 @@ jobs:
         steps:
             - name: make directory and files
               run: |
-                    mkdir c:/source/
-                    mkdir C:/target/
-                    echo "hello" > c:/source/hi.txt
+                    mkdir source
+                    mkdir target
+                    echo "hello" > source/hi.txt
             - name: copy
               run: bash ../script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} 
               shell: bash
