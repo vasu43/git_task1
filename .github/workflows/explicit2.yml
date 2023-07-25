@@ -1,0 +1,33 @@
+name: explicit_call2
+permissions: write-all
+on: 
+    workflow_dispatch: 
+        inputs:
+            filename:
+                required: true
+                type: string
+                description: what to copy
+            path_source: 
+                required: true
+                type: string
+                description: from where to copy
+            path_target: 
+                required: true
+                type: string
+                description: where to copy
+    
+
+
+jobs:
+    # env:
+    #     workspace_git: ${{ github.workspace }}
+    call_action:
+        runs-on: ubuntu-latest
+        steps:
+            - name: call action 
+              uses: vasu43/git_task1/.github/workflows/action.yml@main
+              with: 
+                  filename: ${{github.event.inputs.filename}}
+                  path_source: ${{github.workspace}}/${{github.event.inputs.path_source}}
+                  working_dir: ${{github.workspace}}
+                  path_target: ${{github.workspace}}
