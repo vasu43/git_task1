@@ -12,7 +12,7 @@ on:
       working_dir:
         required: true
         type: string
-      target:
+      path_target:
         required: true
         type: string
                       
