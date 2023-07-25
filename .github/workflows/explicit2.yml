@@ -25,7 +25,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: call action 
-              uses: vasu43/git_task1/.github/workflows/action.yml@main
+              uses: vasu43/git_task1/.github/workflows/action2.yml@main
               with: 
                   filename: ${{github.event.inputs.filename}}
                   path_source: ${{github.workspace}}/${{github.event.inputs.path_source}}
