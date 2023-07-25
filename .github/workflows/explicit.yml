@@ -25,7 +25,7 @@ jobs:
         uses: vasu43/git_task1/.github/workflows/action.yml@main
         with: 
             filename: ${{github.event.inputs.filename}}
-            path: ${{github.workspace}}/${{github.event.inputs.path}}
+            path_source: ${{github.workspace}}/${{github.event.inputs.path_source}}
             working_dir: ${{github.workspace}}
             path_target: ${{github.workspace}}
     
