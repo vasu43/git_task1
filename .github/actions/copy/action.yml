@@ -23,8 +23,8 @@ runs:
         - name: making_directory
           run: |
                 pwd
-                mkdir ${{ github.event.inputs.working_dir }}/$Home${{github.event.inputs.path_source}}
-                mkdir ${{ github.event.inputs.working_dir }}/$Home/target
+                mkdir ${{ github.event.inputs.working_dir }}$Home/${{github.event.inputs.path_source}}
+                mkdir ${{ github.event.inputs.working_dir }}$Home/target
                 echo "hello" > ${{ github.event.inputs.working_dir }}/source/hi.txt
                 echo "hello" > ${{ github.event.inputs.working_dir }}/source/hi1.txt
                 echo "hello" > ${{ github.event.inputs.working_dir }}/source/hi2.txt
