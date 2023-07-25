@@ -1,5 +1,7 @@
 name: reusable_copy_file
 
+permissions: write-all
+
 on:
   workflow_call:
     inputs:
