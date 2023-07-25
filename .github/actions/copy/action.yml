@@ -25,10 +25,10 @@ runs:
                 pwd
                 mkdir -p $HOME/${{github.event.inputs.path_source}}
                 mkdir -p $HOME/${{github.event.inputs.target}}
-                echo "hello" > ${{github.event.inputs.path_source}}/hi.txt
-                echo "hello" > ${{github.event.inputs.path_source}}/hi1.txt
+                echo "hello" > $HOME/${{github.event.inputs.path_source}}/hi.txt
+                echo "hello" > $HOME/${{github.event.inputs.path_source}}/hi1.txt
           shell: bash
 
         - name: copying_file
-          run: echo " ./script.sh $HOME/${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} $HOME/${{github.event.inputs.target}}/${{github.event.inputs.filename}}"
+          run: ./script.sh $HOME/${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} $HOME/${{github.event.inputs.target}}/${{github.event.inputs.filename}}
           shell: bash
