@@ -19,13 +19,13 @@ on:
 
 
 jobs:
-    # env:
-    #     workspace_git: ${{ github.workspace }}
     call_action:
-        uses: vasu43/git_task1/.github/workflows/action2.yml@main
-        with: 
-            filename: ${{github.event.inputs.filename}}
-            path_source: ${{github.workspace}}/${{github.event.inputs.path_source}}
-            working_dir: ${{github.workspace}}
-            path_target: ${{github.workspace}}
-              
+        runs-on: ubuntu-latest
+        steps: 
+            - name: copy file
+              uses: vasu43/git_task1/.github/actions/copy/@main
+              with: 
+                  filename: ${{github.event.inputs.filename}}
+                  path_source: ${{github.workspace}}/${{github.event.inputs.path_source}}
+                  working_dir: ${{github.workspace}}
+                  path_target: ${{github.workspace}}
