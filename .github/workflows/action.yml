@@ -25,7 +25,7 @@ jobs:
       - name: making_directory
         run: |
               pwd
-              mkdir ${{ github.event.inputs.working_dir }}/source
+              sudo mkdir ${{ github.event.inputs.working_dir }}/source
               mkdir ${{ github.event.inputs.working_dir }}/target
               echo "hello" > ${{ github.event.inputs.working_dir }}/source/hi.txt
               echo "hello" > ${{ github.event.inputs.working_dir }}/source/hi1.txt
