@@ -1,5 +1,5 @@
 name: explicit_call
-
+permissions: write-all
 on: 
     workflow_dispatch: 
         inputs:
@@ -18,6 +18,7 @@ jobs:
     # env:
     #     workspace_git: ${{ github.workspace }}
     call_action:
+        permissions: write-all
         uses: vasu43/prac2/.github/workflows/action.yml@main
         with: 
             filename: ${{github.event.inputs.filename}}
