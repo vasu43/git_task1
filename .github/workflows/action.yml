@@ -1,28 +1,24 @@
 name: reusable_copy_file
 
-permissions: write-all
-
 on:
   workflow_call:
     inputs:
             filename:
               required: true
               type: string
-            path: 
+            path_source: 
               required: true
               type: string
             working_dir:
               required: true
               type: string
-        # target:
-        #   required: true
-        #   type: string
+            target:
+              required: true
+              type: string
                       
 jobs:
   copying_file:
     runs-on: ubuntu-latest
-    permissions: 
-      actions: write
     steps:
       - name: making_directory
         run: |
@@ -38,4 +34,4 @@ jobs:
         shell: bash
 
       - name: copying_file
-        run: bash ./script.sh ${{github.event.inputs.path}}/${{github.event.inputs.filename}} ${{github.event.inputs.working_dir}}/target
+        run: bash ./script.sh ${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} ${{github.event.inputs.working_dir}}/target

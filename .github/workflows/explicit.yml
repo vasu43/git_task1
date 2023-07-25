@@ -7,11 +7,15 @@ on:
                 required: true
                 type: string
                 description: what to copy
-            path: 
+            path_source: 
                 required: true
                 type: string
                 description: from where to copy
-
+            path_target: 
+                required: true
+                type: string
+                description: where to copy
+    
 
 
 jobs:
@@ -20,10 +24,10 @@ jobs:
     call_action:
         permissions: 
             actions: write
-        uses: vasu43/prac2/.github/workflows/action.yml@main
+        uses: vasu43/prac2/.github/workflows/action.yml
         with: 
             filename: ${{github.event.inputs.filename}}
             path: ${{github.workspace}}/${{github.event.inputs.path}}
             working_dir: ${{github.workspace}}
-                # target: ${{env.workspace_git}}
+            target: ${{github.workspace}}
     
