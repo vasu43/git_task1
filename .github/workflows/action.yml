@@ -34,4 +34,4 @@ jobs:
         shell: bash
 
       - name: copying_file
-        run: bash ./script.sh ${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} ${{github.event.inputs.working_dir}}/${{github.event.inputs.filename}}
+        run: bash ./script.sh ${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} ${{github.event.inputs.working_dir}}/${{github.event.inputs.path_target}}
