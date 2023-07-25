@@ -30,5 +30,5 @@ runs:
           shell: bash
 
         - name: copying_file
-          run: ./script.sh $HOME/${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} $HOME/${{github.event.inputs.target}}/${{github.event.inputs.filename}}
+          run: bash script.sh $HOME/${{github.event.inputs.path_source}}/${{github.event.inputs.filename}} $HOME/${{github.event.inputs.target}}/${{github.event.inputs.filename}}
           shell: bash
