@@ -35,6 +35,7 @@ jobs:
             - name: make directory and files
               run: |
                     pwd
+                    whoami
                     mkdir ${{ env.workspace_git }}/source
                     mkdir ${{ env.workspace_git }}/target
                     echo "hello" > ${{ env.workspace_git }}/source/hi.txt
