@@ -21,6 +21,8 @@ on:
 jobs:
   copying_file:
     runs-on: ubuntu-latest
+    permissions: 
+      actions: write
     steps:
       - name: making_directory
         run: |
