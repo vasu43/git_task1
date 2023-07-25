@@ -22,7 +22,7 @@ jobs:
     # env:
     #     workspace_git: ${{ github.workspace }}
     call_action:
-        uses: vasu43/git_task1/.github/workflows/action.yml@vasu43
+        uses: vasu43/git_task1/.github/workflows/action.yml@main
         with: 
             filename: ${{github.event.inputs.filename}}
             path_source: ${{github.workspace}}/${{github.event.inputs.path_source}}
