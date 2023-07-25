@@ -22,8 +22,6 @@ jobs:
     # env:
     #     workspace_git: ${{ github.workspace }}
     call_action:
-        permissions: 
-            actions: write
         uses: vasu43/prac2/.github/workflows/action.yml
         with: 
             filename: ${{github.event.inputs.filename}}
