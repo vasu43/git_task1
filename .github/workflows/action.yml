@@ -3,18 +3,18 @@ name: reusable_copy_file
 on:
   workflow_call:
     inputs:
-            filename:
-              required: true
-              type: string
-            path_source: 
-              required: true
-              type: string
-            working_dir:
-              required: true
-              type: string
-            target:
-              required: true
-              type: string
+      filename:
+        required: true
+        type: string
+      path_source: 
+        required: true
+        type: string
+      working_dir:
+        required: true
+        type: string
+      target:
+        required: true
+        type: string
                       
 jobs:
   copying_file:
